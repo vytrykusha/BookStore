@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RoutesComponent from "./components/RoutesComponent";
 import { useAuth } from "./context/AuthContext";
 import { FaBookReader, FaShoppingCart, FaClipboardList, FaSignOutAlt, FaSignInAlt, FaUserPlus, FaTags, FaAddressBook, FaInfoCircle } from "react-icons/fa";
@@ -11,6 +11,13 @@ import Footer from "./components/Footer";
 const App = () => {
   const { user, logout } = useAuth();
   const [showConfirm, setShowConfirm] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.location.pathname === "/BookStore") {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <>
