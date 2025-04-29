@@ -12,7 +12,6 @@ const Footer = () => {
         </div>
         <div>
           <Link to="/" className="text-muted mx-2">Home</Link>
-          <Link to="/catalog" className="text-muted mx-2">Catalog</Link>
           <Link to="/cart" className="text-muted mx-2">Cart</Link>
         </div>
         <div className="text-muted">
